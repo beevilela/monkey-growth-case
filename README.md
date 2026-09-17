@@ -232,6 +232,35 @@ Esses grupos possuem público identificável, permitem experimentação controla
 
 ---
 
+## Dashboard interativo
+
+A análise também está disponível em um dashboard HTML interativo.
+
+O dashboard apresenta:
+
+- indicadores executivos;
+- filtros por mês e segmento;
+- evolução do volume antecipado;
+- fornecedores ativos;
+- participação por segmento;
+- concentração de volume;
+- funil de cadastro e ativação;
+- conversão;
+- coortes;
+- oportunidades priorizadas.
+
+Para visualizar localmente, abra:
+
+```text
+dashboard/index.html
+```
+
+O arquivo é autônomo e não exige instalação, servidor ou licença de ferramenta de BI.
+
+Um detalhe importante: o GitHub exibe o código do HTML, mas não executa o dashboard diretamente na visualização do arquivo. Para a recrutadora acessá-lo como página navegável, você pode ativar o **GitHub Pages** para o repositório. Nesse caso, o dashboard ficará disponível em uma URL semelhante a:
+
+---
+
 Autora
 
 Bettina Vilela Custódio
