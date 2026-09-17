@@ -88,8 +88,6 @@ monkey-growth-case/
 │   ├── figures/
 │   ├── tables/
 │   └── README.md
-├── src/
-│   └── __init__.py
 ├── .gitignore
 └── README.md
 
