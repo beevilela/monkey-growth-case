@@ -72,6 +72,8 @@ Priorizar Sacados com grande quantidade de fornecedores expostos ainda não cada
 
 ```text
 monkey-growth-case/
+├── dashboard/
+│   └── index.html
 ├── data/
 │   ├── raw/
 │   │   └── Case_monkey.xlsx
