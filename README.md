@@ -94,130 +94,62 @@ monkey-growth-case/
 
 ---
 
-Organização das camadas
+## Organização das camadas
 
+```text
 data/raw
-
+```
 Contém o arquivo original disponibilizado para o case, sem alterações.
 
+```text
 data/processed
-
+```
 Contém as bases tratadas, com:
 
-padronização de datas;
+- padronização de datas;
+- limpeza dos campos textuais;
+- criação de variáveis analíticas;
+- classificação do status de cadastro;
+- remoção de duplicatas exatas da base de conversão.
 
-limpeza dos campos textuais;
-
-criação de variáveis analíticas;
-
-classificação do status de cadastro;
-
-remoção de duplicatas exatas da base de conversão.
-
-
+```text
 outputs/tables
-
+```
 Contém os resultados consolidados, incluindo:
 
-resumo executivo;
+- resumo executivo;
+- indicadores de qualidade;
+- volume mensal;
+- análise por segmento;
+- concentração de volume;
+- funil de cadastro e ativação;
+- conversão mensal;
+- conversão por tempo desde o cadastro;
+- coortes;
+- registros separados para auditoria.
 
-indicadores de qualidade;
-
-volume mensal;
-
-análise por segmento;
-
-concentração de volume;
-
-funil de cadastro e ativação;
-
-conversão mensal;
-
-conversão por tempo desde o cadastro;
-
-coortes;
-
-registros separados para auditoria.
-
-
+```text
 outputs/figures
-
+```
 Contém os gráficos utilizados no diagnóstico e na apresentação dos resultados.
 
+```text
 docs
-
+```
 Contém as conclusões, recomendações e limitações da análise.
 
-
 ---
 
-Bases utilizadas
-
-O arquivo original possui três conjuntos de dados:
-
-Base	Descrição
-
-Dados de operação	Operações realizadas por empresa, mês e segmento
-Dados de conversão	Conversão mensal e informação temporal de cadastro
-Dados cadastrais	Cadastro, possibilidade de operar e histórico de operação
-
-
-
----
-
-Etapas da análise
-
-1. Validação das abas e colunas esperadas.
-
-
-2. Diagnóstico de qualidade dos dados.
-
-
-3. Padronização de tipos e datas.
-
-
-4. Tratamento de duplicidades.
-
-
-5. Validação temporal do cadastro.
-
-
-6. Construção dos indicadores executivos.
-
-
-7. Análise de volume mensal.
-
-
-8. Comparação entre Tiny e Não Tiny.
-
-
-9. Análise de concentração por Pareto.
-
-
-10. Diagnóstico do funil de cadastro e ativação.
-
-
-11. Análise de conversão e maturidade.
-
-
-12. Análise de coortes.
-
-
-13. Priorização das oportunidades de Growth.
-
-
-
-
----
-
-Como executar
+## Como executar
 
 O projeto foi desenvolvido em Python e pode ser executado no Google Colab.
 
 1. Clonar o repositório
 
+```text
 !git clone URL_DO_REPOSITORIO
 %cd monkey-growth-case
+```
 
 Substitua URL_DO_REPOSITORIO pela URL deste repositório.
 
@@ -225,7 +157,9 @@ Substitua URL_DO_REPOSITORIO pela URL deste repositório.
 
 Abra:
 
+```text
 notebooks/Monkey_Growth_Case.ipynb
+```
 
 3. Executar as células
 
@@ -233,39 +167,28 @@ Execute as células na ordem apresentada.
 
 O notebook utiliza principalmente:
 
-Python;
-
-pandas;
-
-NumPy;
-
-Matplotlib;
-
-pathlib.
-
+- Python;
+- pandas;
+- NumPy;
+- Matplotlib;
+- pathlib.
 
 As pastas necessárias são criadas automaticamente.
 
-
 ---
 
-Resultados gerados
+## Resultados gerados
 
 Ao final da execução, o notebook produz:
 
-3 bases tratadas em data/processed;
-
-15 tabelas analíticas em outputs/tables;
-
-7 visualizações em outputs/figures;
-
-arquivo de conclusões em docs/conclusoes.md.
-
-
+- 3 bases tratadas em data/processed;
+- 15 tabelas analíticas em outputs/tables;
+- 7 visualizações em outputs/figures;
+- arquivo de conclusões em docs/conclusoes.md.
 
 ---
 
-Priorização
+## Priorização
 
 Prioridade	Iniciativa	Impacto	Confiança	Esforço
 
@@ -275,53 +198,37 @@ Prioridade	Iniciativa	Impacto	Confiança	Esforço
 4	Segmentação Tiny e cauda longa	Médio	Média	Médio
 5	Expansão em parceria com Sacados	Alto	Média	Alto
 
-
-
 ---
 
-Limitações
+## Limitações
 
 A base não contém todos os dados necessários para estimar causalidade ou retorno financeiro incremental.
 
 Para uma análise mais completa, seriam necessários:
 
-valor disponibilizado por fornecedor;
-
-identificação do Sacado;
-
-taxas e condições ofertadas;
-
-histórico de comunicações;
-
-canal de aquisição;
-
-data da primeira operação;
-
-recorrência;
-
-custos de campanha e incentivos.
-
+- valor disponibilizado por fornecedor;
+- identificação do Sacado;
+- taxas e condições ofertadas;
+- histórico de comunicações;
+- canal de aquisição;
+- data da primeira operação;
+- recorrência;
+- custos de campanha e incentivos.
 
 As coortes mais recentes também possuem menor janela de observação. Por isso, a taxa histórica de fornecedores que já operaram não deve ser comparada diretamente entre coortes sem controlar o tempo disponível para conversão.
 
-
 ---
 
-Conclusão
+## Conclusão
 
 A principal oportunidade não está somente em aumentar o número bruto de cadastros.
 
 Os dados indicam duas frentes prioritárias:
 
 1. converter fornecedores que já foram expostos a oportunidades, mas ainda não estão cadastrados;
-
-
 2. ativar fornecedores cadastrados que tiveram possibilidade de operar, mas nunca realizaram uma antecipação.
 
-
-
 Esses grupos possuem público identificável, permitem experimentação controlada e apresentam potencial de impacto tanto no número de fornecedores ativos quanto no volume antecipado.
-
 
 ---
 
