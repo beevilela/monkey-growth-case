@@ -1,0 +1,19 @@
+# Dados
+data/raw/*
+data/processed/*
+
+# Mantém as pastas no Git
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Sistema operacional
+.DS_Store
+
+# Credenciais
+.env
+*.key
